@@ -25,7 +25,7 @@ const HospitalListScreen = () => {
                 setHospitals(response.data);
                 setFilteredHospitals(response.data);
             } catch (err) {
-                console.error(err, "Test");
+                console.error(err);
             } finally {
                 setLoading(false);
             }

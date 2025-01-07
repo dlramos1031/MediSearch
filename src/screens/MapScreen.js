@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, ActivityIndicator } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
-import { getAllHospitals, getHospitalById } from '../services/api';
+import { getHospitalById } from '../services/api';
 
 const MapScreen = ({ route }) => {
     const [hospital, setHospital] = useState(null);
