@@ -1,16 +1,22 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const HospitalCard = ({ hospital }) => {
+const HospitalCard = ({ hospital}) => {
+    const navigation = useNavigation();
+
     return (
-        <View style={styles.card}>
-            <Text style={styles.name}>{hospital.name}</Text>
+        <TouchableOpacity
+            style={styles.card}
+            onPress={() => navigation.navigate('Map', { hospitalId: hospital.hospital_id })}
+        >
+            <Text style={styles.name}>{"🏥 " + hospital.name}</Text>
             <Text style={styles.address}>{hospital.address}</Text>
             <Text style={styles.contact}>Contact: {hospital.contact_number || 'N/A'}</Text>
             <Text style={styles.partner}>
                 {hospital.is_partner ? '⭐ Partner Hospital' : ''}
             </Text>
-        </View>
+        </TouchableOpacity>
     );
 };
 

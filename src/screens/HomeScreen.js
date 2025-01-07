@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
     const navigation = useNavigation();
-
+    
     return (
         <View style={styles.container}>
             <Text style={styles.title}>MediSearch</Text>
