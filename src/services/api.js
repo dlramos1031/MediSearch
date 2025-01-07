@@ -13,8 +13,6 @@ api.interceptors.response.use(
     }
 );
 
-console.log("These are the hospitals: ", api.get('/hospitals'));
-
 export const getAllHospitals = () => api.get('/hospitals');
 export const getHospitalsBySpecialization = (specializationId) =>
     api.get(`/hospitals/specialization/${specializationId}`);
